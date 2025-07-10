@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kishlay Kumar - Python Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Animated Multiverse Galaxy Background */
+    #galaxy {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: 
+        radial-gradient(ellipse at center, 
+          rgba(13, 0, 40, 0.9) 0%, 
+          rgba(0, 0, 30, 0.95) 60%, 
+          #000 100%),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 800 800"><g fill="none" stroke="%23fff" stroke-width="1"><circle cx="400" cy="400" r="50" opacity="0.2"/><circle cx="400" cy="400" r="120" opacity="0.3"/><circle cx="400" cy="400" r="200" opacity="0.4"/></g></svg>');
+      animation: galaxySpin 240s linear infinite;
+    }
+
+    @keyframes galaxySpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Nebula Effects */
+    .nebula {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.6;
+      animation: nebulaPulse 15s infinite alternate;
+    }
+
+    #nebula1 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(100, 0, 255, 0.8), transparent 70%);
+      top: 20%;
+      left: 10%;
+    }
+
+    #nebula2 {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0, 150, 255, 0.6), transparent 70%);
+      bottom: 10%;
+      right: 5%;
+      animation-delay: 5s;
+    }
+
+    @keyframes nebulaPulse {
+      0% { transform: scale(1); opacity: 0.4; }
+      100% { transform: scale(1.2); opacity: 0.8; }
+    }
+
+    /* Stars */
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 3s infinite alternate;
+    }
+
+    /* Flipbook Container */
+    #flipbook-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 600px;
+      z-index: 10;
+    }
+
+    /* Page Styling */
+    .page {
+      background: rgba(10, 5, 30, 0.92);
+      color: #e0ffff;
+      padding: 40px;
+      box-sizing: border-box;
+      border: 1px solid #7f00ff;
+      box-shadow: 
+        0 0 25px rgba(127, 0, 255, 0.5),
+        inset 0 0 15px rgba(127, 0, 255, 0.3);
+      text-shadow: 0 0 8px rgba(200, 150, 255, 0.5);
+    }
+
+    h2 {
+      color: #b388ff;
+      border-bottom: 1px solid #7f00ff;
+      padding-bottom: 10px;
+      margin-top: 0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    b {
+      color: #ffffff;
+    }
+
+    a {
+      color: #7f00ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Flip Animation */
+    .flipbook {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      perspective: 2000px;
+    }
+
+    .page {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transform-style: preserve-3d;
+      transform-origin: left center;
+      transition: transform 1s;
+      backface-visibility: hidden;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      #flipbook-container {
+        width: 90%;
+        height: 500px;
+      }
+      .page {
+        padding: 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #flipbook-container {
+        height: 400px;
+      }
+      .page {
+        padding: 20px;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Animated Multiverse Galaxy -->
+  <div id="galaxy">
+    <div id="nebula1" class="nebula"></div>
+    <div id="nebula2" class="nebula"></div>
+  </div>
+
+  <!-- Flipbook Resume -->
+  <div id="flipbook-container">
+    <div class="flipbook">
+      <!-- Page 1: Personal Info -->
+      <div class="page" style="z-index: 7;">
+        <h2>🚀 Kishlay Kumar</h2>
+        <p><b>📱 Phone:</b> +91 9631472161</p>
+        <p><b>📧 Email:</b> royalkishu876@gmail.com</p>
+        <p><b>📍 Location:</b> Patna, Bihar, India</p>
+        <p><b>🎓 Education:</b> Currently pursuing BBA at Jain University, Bangalore (Distance Learning)</p>
+      </div>
+
+      <!-- Page 2: About Me -->
+      <div class="page" style="z-index: 6;">
+        <h2>🌌 About Me</h2>
+        <p>I am a self-taught, enthusiastic Python developer that specializes in creating:</p>
+        <ul>
+          <li>Intelligent assistants</li>
+          <li>Terminal-based chatbots</li>
+          <li>File managers and automation tools</li>
+          <li>Expense tracking applications</li>
+        </ul>
+        <p>I enjoy working on practical tools that use code to solve real-world problems efficiently.</p>
+      </div>
+
+      <!-- Page 3: Skills -->
+      <div class="page" style="z-index: 5;">
+        <h2>💻 Skills</h2>
+        <ul>
+          <li><b>Python</b> (Core, File Handling)</li>
+          <li><b>HTML</b></li>
+          <li><b>Git, GitHub, Replit</b></li>
+          <li><b>Automation Scripting</b></li>
+          <li><b>CLI Application Development</b></li>
+        </ul>
+      </div>
+
+      <!-- Page 4: Projects -->
+      <div class="page" style="z-index: 4;">
+        <h2>🛠 Projects</h2>
+        <p><b>1. Chatbot (GPT-like)</b><br>
+        A smart terminal chatbot that responds to user input<br>
+        <a href="https://replit.com/@kishlaykumar095/Chatbotpy?v=1" target="_blank">View on Replit</a></p>
+
+        <p><b>2. File Helper Bot</b><br>
+        Automation bot for file management via terminal<br>
+        <a href="https://replit.com/@kishlaykumar095/File-Helper-Botpy?v=1" target="_blank">View on Replit</a></p>
+
+        <p><b>3. Expense Tracker Bot</b><br>
+        CLI tool to track spending with CSV storage<br>
+        <a href="https://replit.com/@kishlaykumar095/Expense-Trackerpy?v=1" target="_blank">View on Replit</a></p>
+      </div>
+
+      <!-- Page 5: Education -->
+      <div class="page" style="z-index: 3;">
+        <h2>🎓 Education</h2>
+        <p><b>Jain University, Bangalore</b><br>
+        Bachelor of Business Administration (BBA)<br>
+        Distance Learning - Currently pursuing</p>
+      </div>
+
+      <!-- Page 6: Certifications -->
+      <div class="page" style="z-index: 2;">
+        <h2>🏆 Certifications</h2>
+        <ul>
+          <li>Python Crash Course - <a href="https://coursera.org/share/a5e370ca3e31f712cb9d9642ceb47e21" target="_blank">View Certificate</a></li>
+          <li>Using Python To Interact With The Operating System - <a href="https://coursera.org/share/dc432f14c20b592534bce48ef6fce0e0" target="_blank">View Certificate</a></li>
+          <li>100 Days Coding Challenge</li>
+          <li>Web Development Fundamentals</li>
+        </ul>
+      </div>
+
+      <!-- Page 7: Summary -->
+      <div class="page" style="z-index: 1;">
+        <h2>✨ Let's Connect</h2>
+        <p>I'm constantly learning and improving my skills in programming, especially in Python and automation.</p>
+        <p>I'm actively looking for:</p>
+        <ul>
+          <li>Internships</li>
+          <li>Freelance projects</li>
+          <li>Junior developer opportunities</li>
+        </ul>
+        <p><b>📧 Email:</b> royalkishu876@gmail.com<br>
+        <b>📱 Phone:</b> +91 9631472161<br>
+        <b>📍 Location:</b> Patna, Bihar, India</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Create stars
+    function createStars() {
+      const galaxy = document.getElementById('galaxy');
+      for (let i = 0; i < 200; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.width = `${Math.random() * 3}px`;
+        star.style.height = star.style.width;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.opacity = Math.random();
+        star.style.animationDelay = `${Math.random() * 5}s`;
+        galaxy.appendChild(star);
+      }
+    }
+
+    // Twinkle animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes twinkle {
+        0% { opacity: 0.3; transform: scale(1); }
+        100% { opacity: 1; transform: scale(1.5); }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Flip animation
+    const pages = document.querySelectorAll('.page');
+    let currentPage = 0;
+
+    document.addEventListener('click', function() {
+      if (currentPage < pages.length - 1) {
+        pages[currentPage].style.transform = 'rotateY(-180deg)';
+        currentPage++;
+      } else {
+        // Reset to first page
+        pages.forEach(page => {
+          page.style.transform = '';
+        });
+        currentPage = 0;
+      }
+    });
+
+    // Initialize
+    createStars();
+  </script>
+</body>
+</html>
